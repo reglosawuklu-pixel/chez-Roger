@@ -18,10 +18,12 @@ const menuCategories = [
     { name: "Spaghetti du chef", price: "2 000 FCFA" },
   ] },
   { name: "Attiéké", items: [
-    { name: "Attiéké poisson", price: "1 000 FCFA" },
     { name: "Attiéké poisson", price: "1 500 FCFA" },
     { name: "Attiéké viande", price: "1 500 FCFA" },
     { name: "Attiéké poisson viande", price: "2 000 FCFA" },
+    { name: "Attiéké poulet mayo", price: "4 000 FCFA" },
+    
+    { name: "poulet mayo", price: "3 000 FCFA" },
   ] },
   { name: "Frites, alloco & poulet", items: [
     { name: "Frite au poulet", price: "1 500 FCFA / 2 000 FCFA" },
@@ -38,9 +40,20 @@ const menuCategories = [
     { name: "Petit pois au saucisse", price: "1 500 FCFA" },
     { name: "Petit pois au saucisse + viande", price: "2 000 FCFA" },
   ] },
+  { name: "Sifio Pinon + Tilapia", items: [
+    { name: "Sifio Pinon + Tilapia", price: "3 000 FCFA" },
+    { name: "Sifio Pinon + Tilapia", price: "3 500 FCFA" },
+    { name: "Sifio Pinon + Tilapia", price: "5 000 FCFA" },
+  ] },
   { name: "Boissons", items: [
     { name: "Canettes", price: "500 FCFA" },
   ] },
+  { name: "Supplément", items: [
+    { name: "Attiéke", price: "500 FCFA" },
+    { name: "Frites", price: "1 000 FCFA" },
+    { name: "Alloco", price: "500 FCFA" },
+
+  }
 ];
 
 const contactCopy = {
@@ -57,7 +70,7 @@ const contactCopy = {
     messageHint: "Écrivez votre message ici…",
     send: "Envoyer sur WhatsApp",
     locationTitle: "Nous trouver",
-    location: "Agoè Minamadou, à côté de ESA, Lomé",
+    location: "Agoè Minamadou 2, à côté de ESA, Lomé",
     phoneTitle: "Appelez-nous",
     emailTitle: "Email",
     hoursTitle: "Horaires",
@@ -78,7 +91,7 @@ const contactCopy = {
     messageHint: "Write your message here…",
     send: "Send on WhatsApp",
     locationTitle: "Find us",
-    location: "Agoè Minamadou, beside ESA, Lomé",
+    location: "Agoè Minamadou 2, beside ESA, Lomé",
     phoneTitle: "Call us",
     emailTitle: "Email",
     hoursTitle: "Opening hours",
@@ -99,7 +112,7 @@ const contactCopy = {
     messageHint: "Schreiben Sie Ihre Nachricht…",
     send: "Über WhatsApp senden",
     locationTitle: "Unser Standort",
-    location: "Agoè Minamadou, neben ESA, Lomé",
+    location: "Agoè Minamadou 2, neben ESA, Lomé",
     phoneTitle: "Rufen Sie uns an",
     emailTitle: "E-Mail",
     hoursTitle: "Öffnungszeiten",
@@ -120,7 +133,7 @@ const contactCopy = {
     messageHint: "Ŋlɔ wò nuɖoɖo afisia…",
     send: "Dɔ ɖe WhatsApp dzi",
     locationTitle: "Kpɔ mí le afima",
-    location: "Agoè Minamadou, ESA gbɔ, Lomé",
+    location: "Agoè Minamadou 2, ESA gbɔ, Lomé",
     phoneTitle: "Yɔ mí",
     emailTitle: "Email",
     hoursTitle: "Ɣeyiɣi si míewɔna dɔ",
@@ -141,7 +154,7 @@ const contactCopy = {
     messageHint: "请在这里填写留言…",
     send: "通过 WhatsApp 发送",
     locationTitle: "餐厅地址",
-    location: "多哥洛美 Agoè Minamadou，ESA 旁边",
+    location: "多哥洛美 Agoè Minamadou 2，ESA 旁边",
     phoneTitle: "致电我们",
     emailTitle: "电子邮箱",
     hoursTitle: "营业时间",
@@ -358,7 +371,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
           <p className="hero__description">{text.heroDescription}</p>
           <div className="hero__actions">
             <a className="button button--orange" href="/menu/carte">{text.seeMenu} <span aria-hidden="true">↗</span></a>
-            <a className="hero__text-link" href="/commande" onClick={(event) => { event.preventDefault(); openOrderPanel(); }}>{text.order} <span aria-hidden="true">↓</span></a>
+            <a className="hero__text-link" href="/commande">{text.order} <span aria-hidden="true">↓</span></a>
           </div>
           <p className="hero__categories">Cuisine togolaise <i /> Spaghettis <i /> Attiéké <i /> Grillades</p>
         </div>
@@ -483,13 +496,13 @@ export default function HomePage({ page = "home", language = "FR" }) {
 
       <section id="contact" className="home-contact">
         <div>
-          <p className="eyebrow"><span /> {text.contact} · AGOÈ MINAMADOU <span /></p>
+          <p className="eyebrow"><span /> {text.contact} · AGOÈ MINAMADOU 2<span /></p>
           <h2>{text.contactTitle}</h2>
           <p>{text.contactText}</p>
           <a className="home-contact__phone" href="tel:+22899848110">+228 99 84 81 10</a>
         </div>
         <div className="home-contact__actions">
-          <a className="button button--orange" href="/commande" onClick={(event) => { event.preventDefault(); openOrderPanel(); }}>{text.order} <span aria-hidden="true">↗</span></a>
+          <a className="button button--orange" href="/commande">{text.order} <span aria-hidden="true">↗</span></a>
           <a className="button button--cream" href="/livraison">Découvrir la livraison <span aria-hidden="true">↗</span></a>
         </div>
       </section>
@@ -587,14 +600,14 @@ export default function HomePage({ page = "home", language = "FR" }) {
       </section>
 
       <section className="commande-page info-page">
-        <p className="eyebrow eyebrow--dark">CHEZ ROGER · AGOÈ MINAMADOU</p>
+        <p className="eyebrow eyebrow--dark">CHEZ ROGER · AGOÈ MINAMADOU 2</p>
         <h2>{text.orderTitle}</h2>
         <p className="body-copy">{text.orderText}</p>
         <div className="commande-page__actions">
           <a className="button button--dark" href="/menu/carte">{text.seeMenu} <span aria-hidden="true">↗</span></a>
           <a className="button button--orange" href="tel:+22899848110">{text.call} <span aria-hidden="true">↗</span></a>
         </div>
-        <p className="commande-page__address">Agoè Minamadou · À côté de ESA · Lomé</p>
+        <p className="commande-page__address">Agoè Minamadou 2· À côté de ESA · Lomé</p>
       </section>      <section className="menu-directory info-page">
         <p className="eyebrow eyebrow--dark">CHEZ ROGER</p>
         <h2>Le menu<br /><em>de la maison.</em></h2>
@@ -634,7 +647,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
             </article>
           ))}
         </section>
-        <p className="food-menu-page__note">Les canettes sont à 500 FCFA · Téléphone : +228 99 84 81 10</p>
+        <p className="food-menu-page__note">Les canettes sont à partir de500 FCFA · Téléphone : +228 99 84 81 10</p>
         <a className="food-menu-page__image-link" href="/menu/carte-officielle">Voir la carte originale en image</a>
       </section>
       <section className="promotion-page info-page">
@@ -718,11 +731,11 @@ export default function HomePage({ page = "home", language = "FR" }) {
               <article className="legal-page__content">
                 <p>Chez Roger accorde une grande importance à la confidentialité de vos données. Cette politique explique quelles informations peuvent être utilisées lorsque vous consultez notre site ou nous contactez.</p>
 
-                <h2>1. Informations recueillies</h2>
+                <h3>1. Informations recueillies</h3>
                 <p>Lorsque vous remplissez le formulaire de contact, les informations que vous saisissez — nom, adresse e-mail, sujet et message — sont préparées dans WhatsApp afin que vous puissiez nous les envoyer. Elles ne sont transmises à Chez Roger que si vous choisissez d’envoyer le message.</p>
                 <p>Les demandes de réservation saisies sur le site ne sont pas encore enregistrées ni transmises automatiquement. Pour réserver, contactez-nous directement.</p>
 
-                <h2>2. Utilisation des informations</h2>
+                <h3>2. Utilisation des informations</h3>
                 <p>Les informations que vous nous envoyez servent uniquement à :</p>
                 <ul>
                   <li>répondre à vos questions et suggestions ;</li>
@@ -731,14 +744,14 @@ export default function HomePage({ page = "home", language = "FR" }) {
                 </ul>
                 <p>Nous n’utilisons pas ces informations pour vous envoyer des offres promotionnelles sans votre accord.</p>
 
-                <h2>3. Partage et protection des données</h2>
+                <h3>3. Partage et protection des données</h3>
                 <p>Nous ne vendons pas vos informations personnelles. Si vous choisissez d’envoyer votre message par WhatsApp, son traitement dépend également des pratiques de confidentialité de WhatsApp. Consultez la <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noreferrer">politique de confidentialité de WhatsApp</a>.</p>
                 <p>Nous limitons l’utilisation des informations reçues à la réponse à votre demande et prenons des précautions raisonnables pour en préserver la confidentialité.</p>
 
-                <h2>4. Cookies et préférences</h2>
+                <h3>4. Cookies et préférences</h3>
                 <p>Le site enregistre votre choix de langue dans le stockage local de votre navigateur afin de le conserver lors de vos prochaines visites. Cette préférence reste sur votre appareil et peut être supprimée depuis les paramètres du navigateur.</p>
 
-                <h2>5. Vos demandes et contact</h2>
+                <h3>5. Vos demandes et contact</h3>
                 <p>Pour toute question concernant cette politique ou les informations que vous nous avez transmises, écrivez-nous à <a href="mailto:contact@chezRogertogo.net">contact@chezRogertogo.net</a>.</p>
               </article>
             </>
@@ -752,44 +765,17 @@ export default function HomePage({ page = "home", language = "FR" }) {
                 <h2>1. Commandes et préparation</h2>
                 <p>Dès qu’une commande est confirmée, sa préparation peut commencer. Contactez-nous dès que possible si vous souhaitez la modifier ou l’annuler. Une annulation ou un remboursement ne peut pas être garanti lorsque la préparation a commencé, sous réserve des droits qui vous sont applicables.</p>
 
-                <h2>2. Remboursements</h2>
+                <h3>2. Remboursements</h3>
                 <p>Un remboursement n’est pas automatique pour un plat commandé, préparé, consommé ou livré. Toutefois, si vous constatez un problème réel concernant votre commande, signalez-le à notre équipe sans tarder. Après vérification, nous étudierons la situation et vous proposerons une solution adaptée, conformément à la réglementation applicable.</p>
 
-                <h2>3. Remplacement d’un plat</h2>
+                <h3>3. Remplacement d’un plat</h3>
                 <p>Lorsqu’un problème est confirmé par notre équipe, le plat concerné peut, selon le cas et la disponibilité, être remplacé par un produit équivalent ou faire l’objet d’une autre solution appropriée. Notre priorité est de trouver une issue respectueuse et satisfaisante pour le client.</p>
 
-                <h2>4. Erreurs de commande</h2>
+                <h3>4. Erreurs de commande</h3>
                 <p>Si vous recevez un article différent de celui commandé, si un élément manque ou si une erreur provient de notre équipe, contactez-nous rapidement en indiquant votre commande. Nous vérifierons les faits et ferons le nécessaire pour corriger la situation dans les meilleurs délais.</p>
 
-                <h2>5. Contact</h2>
+                <h3>5. Contact</h3>
                 <p>Pour toute réclamation ou question concernant une commande, contactez notre équipe :</p>
-                <ul>
-                  <li>Téléphone / WhatsApp : <a href="https://wa.me/22899848110" target="_blank" rel="noreferrer">+228 99 84 81 10</a></li>
-                  <li>E-mail : <a href="mailto:contact@chezRogertogo.net">contact@chezRogertogo.net</a></li>
-                </ul>
-              </article>
-            </>
-          ) : page === "conditions" ? (
-            <>
-              <h1>Termes &amp; Conditions</h1>
-              <article className="legal-page__content">
-                <p>En accédant au site Chez Roger, vous acceptez les présents termes et conditions. Ils décrivent les règles d’utilisation du site et les informations relatives aux demandes de contact, de réservation et de commande.</p>
-
-                <h2>1. Utilisation du site</h2>
-                <p>Le contenu du site est fourni à titre informatif et pour votre usage personnel. Nous faisons notre possible pour tenir les informations à jour, mais les plats, horaires, disponibilités et informations présentés peuvent évoluer. Chez Roger peut actualiser le site lorsque cela est nécessaire.</p>
-
-                <h2>2. Réservations et commandes</h2>
-                <p>Une demande de réservation ou de commande envoyée par le site ou par WhatsApp doit être confirmée par Chez Roger avant d’être considérée comme acceptée. Son exécution dépend notamment de la disponibilité des plats, des horaires et des contraintes de préparation ou de livraison. Si un élément n’est pas disponible, notre équipe vous contactera afin de convenir de la suite.</p>
-                <p>Les demandes de réservation saisies dans le formulaire du site ne sont pas encore transmises automatiquement. Elles ne sont donc pas confirmées tant que notre équipe ne vous a pas répondu.</p>
-
-                <h2>3. Propriété intellectuelle</h2>
-                <p>Les textes, images, logos, éléments graphiques et la mise en page du site sont la propriété de Chez Roger ou utilisés avec autorisation. Toute reproduction ou réutilisation en dehors des exceptions prévues par la loi nécessite une autorisation préalable.</p>
-
-                <h2>4. Informations et responsabilité</h2>
-                <p>Nous nous efforçons de fournir des informations exactes et de maintenir le site accessible. Une interruption temporaire, une erreur ou une information devenue obsolète peut toutefois survenir. Contactez notre équipe pour vérifier un détail important avant de vous déplacer ou de passer commande. Cette section ne limite pas les droits que la réglementation applicable vous reconnaît.</p>
-
-                <h2>5. Droit applicable et contact</h2>
-                <p>Les présents termes sont interprétés conformément au droit applicable au Togo, sans priver le consommateur des protections impératives qui lui sont accordées. Pour toute question concernant le site ou une commande, contactez-nous :</p>
                 <ul>
                   <li>Téléphone / WhatsApp : <a href="https://wa.me/22899848110" target="_blank" rel="noreferrer">+228 99 84 81 10</a></li>
                   <li>E-mail : <a href="mailto:contact@chezRogertogo.net">contact@chezRogertogo.net</a></li>
@@ -824,6 +810,9 @@ export default function HomePage({ page = "home", language = "FR" }) {
     </main>
   );
 }
+
+
+
 
 
 
