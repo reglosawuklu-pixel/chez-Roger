@@ -645,7 +645,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
             </article>
           ))}
         </section>
-        <p className="food-menu-page__note">Les canettes sont à partir de500 FCFA · Téléphone : +228 99 84 81 10</p>
+        <p className="food-menu-page__note">Les canettes sont à partir de 500 FCFA · Téléphone : +228 99 84 81 10</p>
         <a className="food-menu-page__image-link" href="/menu/carte-officielle">Voir la carte originale en image</a>
       </section>
       <section className="promotion-page info-page">
