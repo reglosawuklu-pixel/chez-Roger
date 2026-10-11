@@ -729,11 +729,11 @@ export default function HomePage({ page = "home", language = "FR" }) {
               <article className="legal-page__content">
                 <p>Chez Roger accorde une grande importance à la confidentialité de vos données. Cette politique explique quelles informations peuvent être utilisées lorsque vous consultez notre site ou nous contactez.</p>
 
-                <h3>1. Informations recueillies</h3>
+                <h2>1. Informations recueillies</h2>
                 <p>Lorsque vous remplissez le formulaire de contact, les informations que vous saisissez — nom, adresse e-mail, sujet et message — sont préparées dans WhatsApp afin que vous puissiez nous les envoyer. Elles ne sont transmises à Chez Roger que si vous choisissez d’envoyer le message.</p>
                 <p>Les demandes de réservation saisies sur le site ne sont pas encore enregistrées ni transmises automatiquement. Pour réserver, contactez-nous directement.</p>
 
-                <h3>2. Utilisation des informations</h3>
+                <h2>2. Utilisation des informations</h2>
                 <p>Les informations que vous nous envoyez servent uniquement à :</p>
                 <ul>
                   <li>répondre à vos questions et suggestions ;</li>
@@ -742,14 +742,14 @@ export default function HomePage({ page = "home", language = "FR" }) {
                 </ul>
                 <p>Nous n’utilisons pas ces informations pour vous envoyer des offres promotionnelles sans votre accord.</p>
 
-                <h3>3. Partage et protection des données</h3>
+                <h2>3. Partage et protection des données</h2>
                 <p>Nous ne vendons pas vos informations personnelles. Si vous choisissez d’envoyer votre message par WhatsApp, son traitement dépend également des pratiques de confidentialité de WhatsApp. Consultez la <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noreferrer">politique de confidentialité de WhatsApp</a>.</p>
                 <p>Nous limitons l’utilisation des informations reçues à la réponse à votre demande et prenons des précautions raisonnables pour en préserver la confidentialité.</p>
 
-                <h3>4. Cookies et préférences</h3>
+                <h2>4. Cookies et préférences</h2>
                 <p>Le site enregistre votre choix de langue dans le stockage local de votre navigateur afin de le conserver lors de vos prochaines visites. Cette préférence reste sur votre appareil et peut être supprimée depuis les paramètres du navigateur.</p>
 
-                <h3>5. Vos demandes et contact</h3>
+                <h2>5. Vos demandes et contact</h2>
                 <p>Pour toute question concernant cette politique ou les informations que vous nous avez transmises, écrivez-nous à <a href="mailto:contact@chezRogertogo.net">contact@chezRogertogo.net</a>.</p>
               </article>
             </>
