@@ -760,19 +760,19 @@ export default function HomePage({ page = "home", language = "FR" }) {
               <article className="legal-page__content">
                 <p>Chez Roger fait tout son possible pour proposer des plats frais et de qualité et une expérience agréable. Comme les plats sont préparés pour chaque commande, une annulation ou un remboursement ne peut pas toujours être accordé une fois la préparation commencée ou la commande consommée. Cette politique s’applique sans limiter les droits prévus par la réglementation en vigueur.</p>
 
-              <h2>1. Commandes et préparation</h2>
+                <h2>1. Commandes et préparation</h2>
                 <p>Dès qu’une commande est confirmée, sa préparation peut commencer. Contactez-nous dès que possible si vous souhaitez la modifier ou l’annuler. Une annulation ou un remboursement ne peut pas être garanti lorsque la préparation a commencé, sous réserve des droits qui vous sont applicables.</p>
 
-              <h3>2. Remboursements</h3>
+                <h2>2. Remboursements</h2>
                 <p>Un remboursement n’est pas automatique pour un plat commandé, préparé, consommé ou livré. Toutefois, si vous constatez un problème réel concernant votre commande, signalez-le à notre équipe sans tarder. Après vérification, nous étudierons la situation et vous proposerons une solution adaptée, conformément à la réglementation applicable.</p>
 
-              <h3>3. Remplacement d’un plat</h3>
+                <h2>3. Remplacement d’un plat</h2>
                 <p>Lorsqu’un problème est confirmé par notre équipe, le plat concerné peut, selon le cas et la disponibilité, être remplacé par un produit équivalent ou faire l’objet d’une autre solution appropriée. Notre priorité est de trouver une issue respectueuse et satisfaisante pour le client.</p>
 
-              <h3>4. Erreurs de commande</h3>
+                <h2>4. Erreurs de commande</h2>
                 <p>Si vous recevez un article différent de celui commandé, si un élément manque ou si une erreur provient de notre équipe, contactez-nous rapidement en indiquant votre commande. Nous vérifierons les faits et ferons le nécessaire pour corriger la situation dans les meilleurs délais.</p>
 
-              <h3>5. Contact</h3>
+                <h2>5. Contact</h2>
                 <p>Pour toute réclamation ou question concernant une commande, contactez notre équipe :</p>
                 <ul>
                   <li>Téléphone / WhatsApp : <a href="https://wa.me/22899848110" target="_blank" rel="noreferrer">+228 99 84 81 10</a></li>
