@@ -697,7 +697,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
           <p className="eyebrow eyebrow--dark">VOTRE PROCHAINE BELLE TABLE</p>
           <h2>On vous garde<br /><em>une place ?</em></h2>
           <p className="body-copy">Indiquez-nous le moment souhaité et le nombre de personnes. Nous confirmerons la disponibilité avec vous.</p>
-          <div className="reservation__location"><LocationPin /><span><strong>Agoè Minamadou</strong><small>À côté de ESA · Lomé</small></span></div>
+          <div className="reservation__location"><LocationPin /><span><strong>Agoè Minamadou 2</strong><small>À côté de ESA · Lomé</small></span></div>
         </div>
         <form className="reservation-form" onSubmit={handleReservation}>
           <div className="reservation-form__row">
@@ -756,7 +756,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
           ) : page === "remboursement" ? (
             <>
               <p className="eyebrow eyebrow--dark">RESTAURANT CHEZ ROGER</p>
-              <h1>Politique de Remboursement</h1>
+              <h2>Politique de Remboursement</h2>
               <article className="legal-page__content">
                 <p>Chez Roger fait tout son possible pour proposer des plats frais et de qualité et une expérience agréable. Comme les plats sont préparés pour chaque commande, une annulation ou un remboursement ne peut pas toujours être accordé une fois la préparation commencée ou la commande consommée. Cette politique s’applique sans limiter les droits prévus par la réglementation en vigueur.</p>
 
