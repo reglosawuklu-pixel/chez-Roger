@@ -22,7 +22,7 @@ const menuCategories = [
     { name: "Attiéké viande", price: "1 500 FCFA" },
     { name: "Attiéké poisson viande", price: "2 000 FCFA" },
     { name: "Attiéké poulet mayo", price: "4 000 FCFA" },
-    
+
     { name: "poulet mayo", price: "3 000 FCFA" },
   ] },
   { name: "Frites, alloco & poulet", items: [
@@ -52,8 +52,7 @@ const menuCategories = [
     { name: "Attiéke", price: "500 FCFA" },
     { name: "Frites", price: "1 000 FCFA" },
     { name: "Alloco", price: "500 FCFA" },
-
-  }
+  ] },
 ];
 
 const contactCopy = {
