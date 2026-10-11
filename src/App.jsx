@@ -68,7 +68,7 @@ export default function App() {
         <div className="site-maintenance" role="status" aria-live="polite">
           <div className="site-maintenance__card">
             <img src="/logo-chez-roger-transparent.png" alt="Chez Roger" />
-            <p className="site-maintenance__eyebrow">CHEZ ROGER · LOMÉ</p>
+            <p className="site-maintenance__eyebrow"><h1>CHEZ ROGER · LOMÉ</h1></p>
             <h1>Site en maintenance</h1>
             <p>Nous préparons le site. Revenez bientôt découvrir Chez Roger.</p>
           </div>
