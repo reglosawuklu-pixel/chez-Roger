@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getTranslation } from "../i18n.js";
 import LocationPin from "../composants/LocationPin.jsx";
-import { openOrderPanel } from "../composants/orderPanel.js";
+import { openOrderPanel } from "../composants/orderPanel.js";   
 
 const dishes = Array.from({ length: 8 }, (_, index) => ({
   number: index + 1,
@@ -29,7 +29,6 @@ const menuCategories = [
     { name: "Frite au poulet", price: "1 500 FCFA / 2 000 FCFA" },
     { name: "Alloco au poulet", price: "1 500 FCFA / 2 000 FCFA" },
     { name: "Frite + alloco + poulet", price: "2 000 FCFA" },
-    { name: "Poulet mayo", price: "2 000 FCFA" },
   ] },
   { name: "Couscous", items: [
     { name: "Couscous au saucisse", price: "1 000 FCFA" },
