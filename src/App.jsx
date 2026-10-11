@@ -28,7 +28,7 @@ function pageFromPath(pathname) {
 }
 
 export default function App() {
-  const maintenanceMode = true; // Set to true to enable maintenance mode 
+  const maintenanceMode = false; // Set to true to enable maintenance mode 
   const [page] = useState(() => pageFromPath(window.location.pathname));
   const [language, setLanguage] = useState(() => {
     try {
