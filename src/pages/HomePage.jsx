@@ -3,11 +3,13 @@ import { getTranslation } from "../i18n.js";
 import LocationPin from "../composants/LocationPin.jsx";
 import { openOrderPanel } from "../composants/orderPanel.js";   
 
-const dishes = Array.from({ length: 8 }, (_, index) => ({
-  number: index + 1,
-  name: `Plat ${index + 1}`,
-  image: `/plats/plat-${index + 1}.jpeg`,
-}));
+const dishes = [
+  { number: 1, name: "Attiéké poisson", image: "/plats/attieke-poisson.jpeg" },
+  { number: 2, name: "Frites, alloco et poulet mayo", image: "/plats/frites-alloco-poulet-mayo.jpeg" },
+  { number: 3, name: "Couscous complet", image: "/plats/couscous-complet.jpeg" },
+  { number: 4, name: "Spaghetti crémeux au poulet", image: "/plats/spaghetti-cremeux-poulet.jpeg" },
+  { number: 5, name: "Sifio pinon et tilapia", image: "/plats/sifio-pinon-tilapia.jpeg" },
+];
 
 const menuCategories = [
   { name: "Spaghettis", items: [
@@ -644,6 +646,18 @@ export default function HomePage({ page = "home", language = "FR" }) {
               <span>{item.price}</span>
             </article>
           ))}
+        </section>
+        <section className="food-menu-gallery" aria-labelledby="food-menu-gallery-title">
+          <h2 id="food-menu-gallery-title">Nos plats en images</h2>
+          <div className="dish-grid">
+            {dishes.map((dish) => (
+              <button className="dish-card" type="button" key={dish.number} onClick={() => setSelectedDish(dish)}>
+                <img src={dish.image} alt={dish.name} loading="lazy" />
+                <span className="dish-card__label">{dish.name}</span>
+                <span className="dish-card__hint">Voir le plat <span aria-hidden="true">→</span></span>
+              </button>
+            ))}
+          </div>
         </section>
         <p className="food-menu-page__note">Les canettes sont à partir de 500 FCFA · Téléphone : +228 99 84 81 10</p>
         <a className="food-menu-page__image-link" href="/menu/carte-officielle">Voir la carte originale en image</a>

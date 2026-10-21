@@ -364,6 +364,8 @@ main[data-page="menu-carte"] > :not(.food-menu-page):not(.notice):not(.dish-moda
 .food-menu-item { min-height: 58px; padding: 14px 4px; display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-bottom: 1px solid rgba(211,165,74,.38); }
 .food-menu-item h3 { margin: 0; color: #f5f1eb; font-size: 14px; font-weight: 600; }
 .food-menu-item > span { flex: 0 0 auto; color: var(--orange); font-size: 14px; font-weight: 700; }
+.food-menu-gallery { max-width: 1100px; margin: 52px auto 0; }
+.food-menu-gallery > h2 { margin: 0 0 18px; color: var(--orange); font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 500; }
 .food-menu-page__note { max-width: 850px; margin: 28px auto 8px; color: #c7beb3; font-size: 12px; }
 .food-menu-page__image-link { width: fit-content; max-width: 850px; margin: 8px auto 0; display: block; color: var(--orange); font-size: 11px; text-decoration: underline; text-underline-offset: 4px; }
 main[data-page="menu-image"] { min-height: 100vh; background: #111; }
