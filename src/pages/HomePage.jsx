@@ -4,11 +4,13 @@ import LocationPin from "../composants/LocationPin.jsx";
 import { openOrderPanel } from "../composants/orderPanel.js";   
 
 const dishes = [
-  { number: 1, name: "Attiéké poisson", image: "/plats/attieke-poisson.jpeg" },
-  { number: 2, name: "Frites, alloco et poulet mayo", image: "/plats/frites-alloco-poulet-mayo.jpeg" },
-  { number: 3, name: "Couscous complet", image: "/plats/couscous-complet.jpeg" },
-  { number: 4, name: "Spaghetti crémeux au poulet", image: "/plats/spaghetti-cremeux-poulet.jpeg" },
-  { number: 5, name: "Sifio pinon et tilapia", image: "/plats/sifio-pinon-tilapia.jpeg" },
+  { number: 1, name: "Attiéké poisson viande · 2 000 FCFA", image: "/plats/attieke-poisson-viande-2000.jpeg" },
+  { number: 2, name: "Attiéké poisson · 1 500 FCFA", image: "/plats/attieke-poisson-1500.jpeg" },
+  { number: 3, name: "Couscous saucisse, œuf et viande · 2 000 FCFA", image: "/plats/couscous-saucisse-oeuf-viande-2000.jpeg" },
+  { number: 4, name: "Frite, alloco et poulet · 2 500 FCFA", image: "/plats/frite-alloco-poulet-2500.jpeg" },
+  { number: 5, name: "Frite au poulet · 1 500 FCFA", image: "/plats/frite-au-poulet-1500.jpeg" },
+  { number: 6, name: "Alloco au poulet · 2 000 FCFA", image: "/plats/alloco-au-poulet-2000.jpeg" },
+  { number: 7, name: "Spaghetti du chef · 2 000 FCFA", image: "/plats/spaghetti-du-chef-2000.jpeg" },
 ];
 
 const menuCategories = [
@@ -25,12 +27,14 @@ const menuCategories = [
     { name: "Attiéké poisson viande", price: "2 000 FCFA" },
     { name: "Attiéké poulet mayo", price: "4 000 FCFA" },
 
-    { name: "poulet mayo", price: "3 000 FCFA" },
+    { name: "Poulet mayo", price: "2 500 FCFA" },
   ] },
   { name: "Frites, alloco & poulet", items: [
-    { name: "Frite au poulet", price: "1 500 FCFA / 2 000 FCFA" },
-    { name: "Alloco au poulet", price: "1 500 FCFA / 2 000 FCFA" },
-    { name: "Frite + alloco + poulet", price: "2 000 FCFA" },
+    { name: "Frite au poulet", price: "1 500 FCFA" },
+    { name: "Frite au poulet", price: "2 000 FCFA" },
+    { name: "Alloco au poulet", price: "2 000 FCFA" },
+    { name: "Alloco au poulet", price: "2 500 FCFA" },
+    { name: "Frite + alloco + poulet", price: "2 500 FCFA" },
   ] },
   { name: "Couscous", items: [
     { name: "Couscous au saucisse", price: "1 000 FCFA" },
