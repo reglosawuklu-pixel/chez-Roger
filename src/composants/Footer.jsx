@@ -35,7 +35,7 @@ export default function Footer({ language = "FR" }) {
       </div>
       <div className="site-footer__bottom">
         <p>© {new Date().getFullYear()} CHEZ ROGER. {text.footerRights}</p>
-        <p className="site-footer__developer">{language === "EN" ? "Developed by" : language === "DE" ? "Entwickelt von" : language === "ZH" ? "开发者" : language === "EE" ? "Wɔe" : "Développé par"} <strong>AWUKLU K. Régis</strong></p>
+        <p className="site-footer__developer">{language === "EN" ? "Developed by" : language === "DE" ? "Entwickelt von" : language === "ZH" ? "开发者" : language === "EE" ? "Wɔe" : "Développé par"} <strong>AWUKLU K. Régis · +228 99 70 38 20</strong></p>
       </div>
     </footer>
   );
