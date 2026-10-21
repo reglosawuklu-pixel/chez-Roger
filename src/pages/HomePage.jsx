@@ -622,6 +622,19 @@ export default function HomePage({ page = "home", language = "FR" }) {
       <section className="menu-card-page" aria-label="Menu officiel Chez Roger">
         <img src="/menu-chez-roger.jpeg" alt="Carte officielle Chez Roger avec les plats et leurs prix" />
       </section>
+      <section className="menu-card-gallery" aria-labelledby="menu-card-gallery-title">
+        <h2 id="menu-card-gallery-title">Nos plats en images</h2>
+        <p>Découvrez quelques plats préparés par Chez Roger.</p>
+        <div className="dish-grid">
+          {dishes.map((dish) => (
+            <button className="dish-card" type="button" key={dish.number} onClick={() => setSelectedDish(dish)}>
+              <img src={dish.image} alt={dish.name} loading="lazy" />
+              <span className="dish-card__label">{dish.name}</span>
+              <span className="dish-card__hint">Voir le plat <span aria-hidden="true">→</span></span>
+            </button>
+          ))}
+        </div>
+      </section>
 
       <section className="food-menu-page">
         <div className="food-menu-page__intro">
@@ -650,18 +663,6 @@ export default function HomePage({ page = "home", language = "FR" }) {
               <span>{item.price}</span>
             </article>
           ))}
-        </section>
-        <section className="food-menu-gallery" aria-labelledby="food-menu-gallery-title">
-          <h2 id="food-menu-gallery-title">Nos plats en images</h2>
-          <div className="dish-grid">
-            {dishes.map((dish) => (
-              <button className="dish-card" type="button" key={dish.number} onClick={() => setSelectedDish(dish)}>
-                <img src={dish.image} alt={dish.name} loading="lazy" />
-                <span className="dish-card__label">{dish.name}</span>
-                <span className="dish-card__hint">Voir le plat <span aria-hidden="true">→</span></span>
-              </button>
-            ))}
-          </div>
         </section>
         <p className="food-menu-page__note">Les canettes sont à partir de 500 FCFA · Téléphone : +228 99 84 81 10</p>
         <a className="food-menu-page__image-link" href="/menu/carte-officielle">Voir la carte originale en image</a>
