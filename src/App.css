@@ -592,45 +592,6 @@ main[data-page="menu-carte"],main[data-page="menu-image"],.menu-card-page { back
 .food-menu-item h3 { color: #211a16; }
 .site-footer__brand { padding: 0; background: transparent; }
 
-/* Décors latéraux inspirés de la carte officielle */
-@media (min-width: 860px) {
-  .food-menu-page {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    padding-right: clamp(128px, 15vw, 210px);
-    padding-left: clamp(128px, 15vw, 210px);
-  }
-  .food-menu-page::before,
-  .food-menu-page::after {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    z-index: 0;
-    width: clamp(94px, 12vw, 168px);
-    content: "";
-    background-image: linear-gradient(90deg, rgba(18, 12, 7, .06), rgba(18, 12, 7, .06)), url("/menu-chez-roger.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: .92;
-    pointer-events: none;
-  }
-  .food-menu-page::before {
-    left: 0;
-    background-position: left center;
-    box-shadow: inset -22px 0 24px rgba(255, 255, 255, .9);
-  }
-  .food-menu-page::after {
-    right: 0;
-    background-position: right center;
-    box-shadow: inset 22px 0 24px rgba(255, 255, 255, .9);
-  }
-  .food-menu-page > * {
-    position: relative;
-    z-index: 1;
-  }
-}
-
 /* Page Contact, inspirée de la disposition de référence */
 .contact-page { padding: 0 clamp(24px, 6.25vw, 96px) 82px; background: #fff; color: #211a16; }
 .contact-page__heading { max-width: 1050px; margin: 0 auto; padding: 62px 16px 82px; text-align: center; }
