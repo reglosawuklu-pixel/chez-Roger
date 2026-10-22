@@ -11,6 +11,8 @@ const dishes = [
   { number: 5, name: "Frite au poulet · 1 500 FCFA", image: "/plats/frite-au-poulet-1500.jpeg" },
   { number: 6, name: "Alloco au poulet · 2 000 FCFA", image: "/plats/alloco-au-poulet-2000.jpeg" },
   { number: 7, name: "Spaghetti du chef · 2 000 FCFA", image: "/plats/spaghetti-du-chef-2000.jpeg" },
+  { number: 8, name: "Couscous saucisse et œuf · 1 500 FCFA", image: "/plats/couscous-saucisse-oeuf-1500.jpeg" },
+  { number: 9, name: "Djinkoumin au poulet · 2 000 FCFA", image: "/plats/djinkoumin-poulet-2000.jpeg" },
 ];
 
 const menuCategories = [
@@ -40,6 +42,9 @@ const menuCategories = [
     { name: "Couscous au saucisse", price: "1 000 FCFA" },
     { name: "Couscous + saucisse + œuf", price: "1 500 FCFA" },
     { name: "Couscous + saucisse + œuf + viande", price: "2 000 FCFA" },
+  ] },
+  { name: "Djinkoumin", items: [
+    { name: "Djinkoumin au poulet", price: "2 000 FCFA" },
   ] },
   { name: "Petit pois", items: [
     { name: "Petit pois au saucisse", price: "1 500 FCFA" },
