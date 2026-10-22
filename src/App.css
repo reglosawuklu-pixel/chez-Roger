@@ -246,6 +246,8 @@ main[data-page="remboursement"] > .legal-page, main[data-page="confidentialite"]
 .info-page { min-height: calc(100vh - 180px); padding: 100px clamp(28px, 12vw, 190px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; background: var(--paper); color: var(--ink); }
 .info-page h2 { margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(48px, 7vw, 78px); line-height: 1.04; font-weight: 500; letter-spacing: -.04em; }
 .info-page h2 em { color: var(--orange); font-weight: 500; }
+/* Titres numérotés des politiques : plus lisibles sur ordinateur et mobile */
+.info-page.legal-page .legal-page__content h2 { margin: 42px 0 16px; color: #394a5b; font-family: inherit; font-size: clamp(22px, 2.2vw, 30px); font-weight: 700; line-height: 1.35; letter-spacing: normal; }
 .info-page .body-copy { max-width: 520px; margin: 0 0 28px; font-size: 14px; }
 .menu-directory__links { width: 100%; margin-top: 20px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .menu-directory__links a { min-height: 120px; padding: 22px; display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; background: #211a16; color: var(--paper); font-family: 'Playfair Display', Georgia, serif; font-size: 18px; }
