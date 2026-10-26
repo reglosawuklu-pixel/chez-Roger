@@ -12,8 +12,8 @@ const dishes = [
   { number: 6, name: "Alloco au poulet · 2 000 FCFA", image: "/plats/alloco-au-poulet-2000.jpeg" },
   { number: 7, name: "Spaghetti du chef · 2 000 FCFA", image: "/plats/spaghetti-du-chef-2000.jpeg" },
   { number: 8, name: "Couscous saucisse et œuf · 1 500 FCFA", image: "/plats/couscous-saucisse-oeuf-1500.jpeg" },
-  { number: 9, name: "Djinkoumin au poulet · 2 500 FCFA", image: "/plats/djinkoumin-poulet-2500.jpeg" },
-  { number: 10, name: "Sifio Pinon Tilapia · 3 000 FCFA", image: "/plats/sifio- Pinon-tilapia-3000.jpeg" },
+  { number: 9, name: "Djonkoumin au poulet · 2 500 FCFA", image: "/plats/djonkoumin-poulet-2500.jpeg", onOrder: true },
+  { number: 10, name: "Sifio Pinon au Tilapia · 3 000 FCFA", image: "/plats/sifio-pinon-tilapia-3000.jpeg" },
 ];
 
 const menuCategories = [
@@ -44,8 +44,8 @@ const menuCategories = [
     { name: "Couscous + saucisse + œuf", price: "1 500 FCFA" },
     { name: "Couscous + saucisse + œuf + viande", price: "2 000 FCFA" },
   ] },
-  { name: "Djinkoumin", items: [
-    { name: "Djinkoumin au poulet", price: "2 500 FCFA" },
+  { name: "Djonkoumin", items: [
+    { name: "Djonkoumin au poulet", price: "2 500 FCFA", onOrder: true },
   ] },
   { name: "Petit pois", items: [
     { name: "Petit pois au saucisse", price: "1 500 FCFA" },
@@ -498,7 +498,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
           {dishes.map((dish) => (
             <button className="home-gallery__photo" type="button" key={dish.number} aria-label={`Afficher le plat ${dish.number}`} onClick={() => setSelectedDish(dish)}>
               <img src={dish.image} alt={`Plat ${dish.number} de Chez Roger`} loading="lazy" />
-              <span>Plat {dish.number} <span aria-hidden="true">↗</span></span>
+              <span>Plat {dish.number}{dish.onOrder ? " · Sur commande" : ""} <span aria-hidden="true">↗</span></span>
             </button>
           ))}
         </div>
@@ -636,6 +636,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
             <button className="dish-card" type="button" key={dish.number} onClick={() => setSelectedDish(dish)}>
               <img src={dish.image} alt={dish.name} loading="lazy" />
               <span className="dish-card__label">{dish.name}</span>
+              {dish.onOrder && <span className="dish-card__availability">Sur commande</span>}
               <span className="dish-card__hint">Voir le plat <span aria-hidden="true">→</span></span>
             </button>
           ))}
@@ -665,7 +666,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
           <h2>{menuCategories[activeMenuCategory].name}</h2>
           {menuCategories[activeMenuCategory].items.map((item, index) => (
             <article className="food-menu-item" key={`${item.name}-${index}`}>
-              <h3>{item.name}</h3>
+              <div className="food-menu-item__name"><h3>{item.name}</h3>{item.onOrder && <small>Sur commande</small>}</div>
               <span>{item.price}</span>
             </article>
           ))}
@@ -709,6 +710,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
             <button className="dish-card" type="button" key={dish.number} onClick={() => setSelectedDish(dish)}>
               <img src={dish.image} alt={dish.name} loading="lazy" />
               <span className="dish-card__label">{dish.name}</span>
+              {dish.onOrder && <span className="dish-card__availability">Sur commande</span>}
               <span className="dish-card__hint">Voir le plat <span aria-hidden="true">↗</span></span>
             </button>
           ))}
@@ -824,7 +826,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
             <div className="dish-modal__caption">
               <p className="eyebrow"><span /> CHEZ ROGER <span /></p>
               <h2>{selectedDish.name}</h2>
-              <p>Le nom et le prix de ce plat seront ajoutés à la carte officielle.</p>
+              <p>{selectedDish.onOrder ? "Ce plat est disponible uniquement sur commande." : "Retrouvez ce plat et son prix sur la carte Chez Roger."}</p>
             </div>
           </div>
         </div>
