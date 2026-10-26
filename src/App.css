@@ -255,6 +255,7 @@ main[data-page="remboursement"] > .legal-page, main[data-page="confidentialite"]
 .menu-directory__links a:hover { background: #6e0f1a; }
 
 main[data-page="home"] > .menu-card-page,
+main[data-page="home"] > .menu-card-gallery,
 main[data-page="home"] > .food-menu-page,
 main[data-page="home"] > .menu-directory,
 main[data-page="home"] > .promotion-page,
