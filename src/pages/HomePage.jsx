@@ -345,6 +345,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
   const [selectedDish, setSelectedDish] = useState(null);
   const [activeMenuCategory, setActiveMenuCategory] = useState(0);
   const [reviewRating, setReviewRating] = useState(0);
+  const [reviewSubmitting, setReviewSubmitting] = useState(false);
 
   function handleReservation(event) {
     event.preventDefault();
@@ -352,11 +353,39 @@ export default function HomePage({ page = "home", language = "FR" }) {
     event.currentTarget.reset();
   }
 
-  function handleReview(event) {
+  async function handleReview(event) {
     event.preventDefault();
-    setNotice("Merci pour ton avis ! Son enregistrement sera activé avec la base de données.");
-    event.currentTarget.reset();
-    setReviewRating(0);
+    if (reviewSubmitting || reviewRating === 0) return;
+
+    const form = event.currentTarget;
+    const values = new FormData(form);
+    setReviewSubmitting(true);
+    setNotice("");
+
+    try {
+      const response = await fetch("/api/reviews", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: values.get("review-name"),
+          email: values.get("review-email"),
+          rating: reviewRating,
+          message: values.get("review-message"),
+          website: values.get("website"),
+          consent: values.get("review-consent") === "on",
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || "Impossible d’enregistrer votre avis pour le moment.");
+
+      setNotice("Merci pour votre avis ! Il a bien été enregistré et sera vérifié avant toute publication.");
+      form.reset();
+      setReviewRating(0);
+    } catch (error) {
+      setNotice(error.message || "Une erreur est survenue. Votre avis n’a pas été enregistré.");
+    } finally {
+      setReviewSubmitting(false);
+    }
   }
 
   function handleContact(event) {
@@ -549,12 +578,13 @@ export default function HomePage({ page = "home", language = "FR" }) {
             </div>
           </fieldset>
           <div className="review-form__row">
-            <label>{text.name}<input name="review-name" type="text" placeholder={text.name} autoComplete="name" required /></label>
-            <label>Email<input name="review-email" type="email" placeholder="Email" autoComplete="email" required /></label>
+            <label>{text.name}<input name="review-name" type="text" maxLength="120" placeholder={text.name} autoComplete="name" required /></label>
+            <label>Email<input name="review-email" type="email" maxLength="254" placeholder="Email" autoComplete="email" required /></label>
           </div>
-          <label>Votre message<textarea name="review-message" placeholder="Racontez-nous votre expérience…" rows="4" required /></label>
-          <button className="button button--dark" type="submit" disabled={reviewRating === 0}>{text.reviewSubmit} <span aria-hidden="true">↗</span></button>
-          <p className="review-form__note">L’enregistrement des avis sera activé lors du branchement de la base de données.</p>
+          <label>Votre message<textarea name="review-message" maxLength="2000" placeholder="Racontez-nous votre expérience…" rows="4" required /></label>
+          <label className="review-form__honeypot" aria-hidden="true">Site web<input name="website" type="text" tabIndex="-1" autoComplete="off" /></label>
+          <label className="review-form__consent"><input name="review-consent" type="checkbox" required /> J’accepte l’enregistrement de mon nom, de mon e-mail, de ma note et de mon avis pour son traitement par Chez Roger. Mon avis ne sera pas publié sans validation.</label>
+          <button className="button button--dark" type="submit" disabled={reviewRating === 0 || reviewSubmitting}>{reviewSubmitting ? "Enregistrement…" : text.reviewSubmit} <span aria-hidden="true">↗</span></button>
         </form>
       </section>
 
@@ -758,6 +788,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
 
                 <h2>1. Informations recueillies</h2>
                 <p>Lorsque vous remplissez le formulaire de contact, les informations que vous saisissez — nom, adresse e-mail, sujet et message — sont préparées dans WhatsApp afin que vous puissiez nous les envoyer. Elles ne sont transmises à Chez Roger que si vous choisissez d’envoyer le message.</p>
+                <p>Si vous envoyez un avis en cochant la case de consentement, Chez Roger enregistre votre nom, votre adresse e-mail, votre note et votre message dans une base de données hébergée par Supabase afin de traiter votre avis. Les avis restent privés et ne sont pas publiés sans validation.</p>
                 <p>Les demandes de réservation saisies sur le site ne sont pas encore enregistrées ni transmises automatiquement. Pour réserver, contactez-nous directement.</p>
 
                 <h2>2. Utilisation des informations</h2>
@@ -771,6 +802,7 @@ export default function HomePage({ page = "home", language = "FR" }) {
 
                 <h2>3. Partage et protection des données</h2>
                 <p>Nous ne vendons pas vos informations personnelles. Si vous choisissez d’envoyer votre message par WhatsApp, son traitement dépend également des pratiques de confidentialité de WhatsApp. Consultez la <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noreferrer">politique de confidentialité de WhatsApp</a>.</p>
+                <p>Le stockage des avis est assuré par Supabase. Pour demander l’accès ou la suppression d’un avis, contactez-nous à l’adresse indiquée ci-dessous.</p>
                 <p>Nous limitons l’utilisation des informations reçues à la réponse à votre demande et prenons des précautions raisonnables pour en préserver la confidentialité.</p>
 
                 <h2>4. Cookies et préférences</h2>
