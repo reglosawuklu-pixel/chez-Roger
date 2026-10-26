@@ -366,6 +366,10 @@ main[data-page="menu-carte"] > :not(.food-menu-page):not(.notice):not(.dish-moda
 .food-menu-item { min-height: 58px; padding: 14px 4px; display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-bottom: 1px solid rgba(211,165,74,.38); }
 .food-menu-item h3 { margin: 0; color: #f5f1eb; font-size: 14px; font-weight: 600; }
 .food-menu-item > span { flex: 0 0 auto; color: var(--orange); font-size: 14px; font-weight: 700; }
+.food-menu-item__name { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+.food-menu-item__name small,.dish-card__availability { width: fit-content; padding: 5px 8px; display: inline-block; border: 1px solid rgba(240,120,24,.52); color: #f0a04c; font: 700 9px/1.1 Arial,sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.dish-card__availability { margin: 0 15px 8px; }
+.dish-modal__availability { margin: 0 0 12px; color: #a94708; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .menu-card-gallery { padding: 72px clamp(24px, 9vw, 140px) 84px; background: #fff; color: #211a16; }
 .menu-card-gallery > h2 { margin: 0 0 10px; color: #b95600; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(34px, 5vw, 52px); font-weight: 500; }
 .menu-card-gallery > p { margin: 0 0 30px; color: #70675f; }
